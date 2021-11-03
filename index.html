@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+    <div class="topnav" id="myTopnav">
+        <a href="#">Responsive Navbar</a>
+        <a href="#"><i class="fa fa-home"></i> Home</a>
+        <a href="#"><i class="fa fa-question-circle"></i> About</a>
+        <a href="#"><i class="fa fa-play-circle"></i> Tutorials</a>
+        <a href="#"><i class="fa fa-pencil"></i> Blog</a>
+        <a href="#"><i class="fa fa-phone"></i> Contact Me</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+        <form id="myForm"><button id="toggleMode" onclick="toggleMyMode()" type="button"><i class="fa fa-pencil"></i>  Dark Mode</button></form>
+    </div>
+    <div id="container">
+        <h2>Responsive Top Navbar</h2>
+        <p>This is a template for responsive navbar using HTML, CSS & JavaScript</p>
+    </div>
+    <script>
+        function myFunction(){
+            let myTopnav = document.getElementById("myTopnav");
+            if (myTopnav.className === "topnav"){
+                myTopnav.className += " responsive";
+            }else{
+                myTopnav.className = "topnav";
+            }
+        }
+    </script>
+    <script>
+        function toggleMyMode(){
+            let toggleMode = document.getElementById('toggleMode');
+            let myBody = document.getElementById('body');
+            if (myBody.style.backgroundColor == ''){
+                myBody.style.backgroundColor = '#000';
+                myBody.style.color = '#fff';
+                toggleMode.innerHTML = '<i class="fa fa-pencil"></i> Light Mode';
+            }else{
+                myBody.style.backgroundColor = '';
+                myBody.style.color = '';
+                toggleMode.innerHTML = '<i class="fa fa-pencil"></i> Dark Mode';
+                myBody.removeAttribute("style");
+            }
+        }
+    </script>
+</body>
+</html>
